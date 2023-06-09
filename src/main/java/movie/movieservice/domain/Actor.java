@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-@Getter @Setter
+@Getter
 //@NoArgsConstructor //생성메서드를 사용하지 않고 직접생성 하는것을 금지 하는 것
 public class Actor extends Worker {
 
@@ -29,8 +29,10 @@ public class Actor extends Worker {
     public void Actor(String name, Date birthday, Integer height, String instagram){
         this.setName(name);
         this.setBirth(birthday);
-        this.setHeight(height);
-        this.setInstagram(instagram);
+        this.height = height;
+        this.instagram = instagram;
+
+
     }
 
 }
