@@ -1,14 +1,27 @@
 package movie.movieservice.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
+@NoArgsConstructor
+
+@Entity
 @Getter
 public class ScreenSeat {
 
+    @Id
+    @GeneratedValue
+    @Column(name="TICKET_SEAT_ID")
     private Long id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="SEAT_ID")
     private Seat seat;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="TICKET_ID")
     private Ticket ticket;
 
     //연관관계 메서드

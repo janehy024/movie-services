@@ -1,15 +1,27 @@
 package movie.movieservice.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.time.LocalTime;
 
+@NoArgsConstructor
+
+@Entity
 @Getter
 public class Screen {
+
+    @Id @GeneratedValue
+    @Column(name="SCREEN_ID")
     private Long id;
 
+    @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn(name = "MOVIE_ID")
     private Movie movie;//영화 이름
 
+    @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn(name = "THEATER_ID")
     private Theater theater; //상영관 이름
 
     private LocalTime startTime;

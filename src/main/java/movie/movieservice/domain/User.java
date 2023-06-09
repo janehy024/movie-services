@@ -1,20 +1,31 @@
 package movie.movieservice.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@NoArgsConstructor
+
+@Entity
 @Getter
 public class User extends BaseEntity{
 
+    @Id
+    @GeneratedValue
+    @Column(name = "USER_ID")
     private Long id;
+
     private String name;
     private Integer age;
 
+    @Embedded
     private Address address;
 
+    @OneToMany(fetch= FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "user")
     private List<Ticket> tickets = new ArrayList<Ticket>();
 
 

@@ -1,13 +1,21 @@
 package movie.movieservice.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@NoArgsConstructor
+
+@Entity
 @Getter
 public class Seat {
 
+    @Id
+    @GeneratedValue
+    @Column(name= "SEAT_ID")
     private Long id;
 
     private Integer seatRow;
@@ -15,8 +23,12 @@ public class Seat {
 
     private Boolean state;
 
+    @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn(name= "THEATER_ID")
     private Theater theater;
 
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "SEAT_ID")
     private List<ScreenSeat> screenSeats = new ArrayList<ScreenSeat>();
 
 
