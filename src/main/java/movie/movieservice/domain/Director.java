@@ -15,10 +15,10 @@ import java.util.Date;
 @NoArgsConstructor
 public class Director extends Worker{
 
-    @Id
+/*    @Id
     @GeneratedValue
     @Column(name = "WORKER_ID")
-    private Long id;
+    private Long id;*/
 
     private String birthPlace;
 
