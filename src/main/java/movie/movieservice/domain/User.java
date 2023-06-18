@@ -38,11 +38,17 @@ public class User extends BaseEntity{
     }
 
     //생성 메서드
-    public User(String name, Integer age, String city, String street, String zipCode){
+    public void createUser(String name, Integer age, String city, String street, String zipCode){
+
         this.name = name;
         this.age = age;
         Address address = new Address(city, street, zipCode);
         this.address = address;
         this.setCreateTime(LocalDateTime.now());
+    }
+
+    //수정 로직
+    public void editUser(String findName, String editName){
+
     }
 }
