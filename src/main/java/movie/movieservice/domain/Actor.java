@@ -26,11 +26,15 @@ public class Actor extends Worker {
     //연관관계 메서드
 
     //생성 메서드
-    public void Actor(String name, Date birthday, Integer height, String instagram){
+/*    public void Actor(String name, Date birthday, Integer height, String instagram){
         this.setName(name);
         this.setBirth(birthday);
         this.height = height;
         this.instagram = instagram;
+    }*/
+
+    public void Actor(String name) {
+        this.setName(name);
     }
 
 }
