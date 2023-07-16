@@ -9,15 +9,13 @@ import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
-
 @Getter
 @Entity
 public class Movie {
 
     @Id
-    @GeneratedValue
     @Column(name = "MOVIE_ID")
-    private Long id;
+    private String id;
 
     private String name;
 
@@ -38,6 +36,9 @@ public class Movie {
     @JoinColumn(name = "MOVIE_ID")
     private List<Screen> screens = new ArrayList<>();
 
+
+
+
     //연관 메서드
     public void addMovieWorker(MovieWorker movieWorker) {
         this.movieWorkers.add(movieWorker);
@@ -51,10 +52,16 @@ public class Movie {
         if(screen.getMovie() != this){
             screen.setMovie(this);
         }
-
     }
 
+    public void Movie(String id, Genre genre, String name, Date openingDate, Integer runningTime) {
+        this.id = id;
+        this.genre = genre;
+        this.name = name;
+        this.openingDate = openingDate;
+        this.runningTime = runningTime;
+    }
 
-
-
+    public Movie(String movieCd, Genre valueOf, String movieNm, Date date, int parseInt) {
+    }
 }
