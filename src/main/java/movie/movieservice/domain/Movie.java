@@ -11,15 +11,13 @@ import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
-
 @Getter
 @Entity
 public class Movie extends BaseEntity{
 
     @Id
-    @GeneratedValue
     @Column(name = "MOVIE_ID")
-    private Long id;
+    private String id;
 
     private String name;
 
@@ -40,6 +38,9 @@ public class Movie extends BaseEntity{
     @JoinColumn(name = "MOVIE_ID")
     private List<Screen> screens = new ArrayList<>();
 
+
+
+
     //연관 메서드
     public void addMovieWorker(MovieWorker movieWorker) {
         this.movieWorkers.add(movieWorker);
@@ -54,23 +55,12 @@ public class Movie extends BaseEntity{
             screen.setMovie(this);
         }
     }
-
-    //생성메서드
-/*    public static void createMovie(String name, Date openingDate, Integer runningTime, Genre genre){
-
-        Movie movie = new Movie();
-        movie.setName(name);
-        movie.setOpeningDate(openingDate);
-        movie.setRunningTime(runningTime);
-        movie.setGenre(genre);
-    }*/
-
-    public void createMovie(String name, Date openingDate, Integer runningTime, Genre genre){
-
+  
+    public void createMovie(String id, Genre genre, String name, Date openingDate, Integer runningTime) {
+        this.id = id;
+        this.genre = genre;
         this.name = name;
         this.openingDate = openingDate;
         this.runningTime = runningTime;
-        this.genre = genre;
-        this.setCreateTime(LocalDateTime.now());
     }
 }
