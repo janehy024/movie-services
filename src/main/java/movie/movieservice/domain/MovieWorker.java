@@ -8,7 +8,6 @@ import javax.persistence.*;
 
 @NoArgsConstructor
 
-@Setter //set 사용?
 @Getter
 @Entity
 public class MovieWorker {
@@ -28,6 +27,23 @@ public class MovieWorker {
 
     @Enumerated(EnumType.STRING)
     private RoleType roleType;
+
+    //연관 메서드
+    public void setMovie(Movie movie){
+        if(this.movie != null){
+            this.movie.getMovieWorkers().remove(this);
+        }
+        this.movie = movie;
+        movie.getMovieWorkers().add(this);
+    }
+
+    public void setWorker(Worker worker){
+        if(this.worker != null){
+            this.worker.getMovieWorkers().remove(this);
+        }
+        this.worker = worker;
+        worker.getMovieWorkers().add(this);
+    }
 
     //생성 메서드
     public MovieWorker(RoleType roleType, Movie movie){
