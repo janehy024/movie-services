@@ -26,12 +26,8 @@ public class MovieWorker {
     @JoinColumn(name="WORKER_ID")
     private Worker worker;
 
-    @Enumerated(EnumType.STRING)
-    private RoleType roleType;
-
     //생성 메서드
-    public MovieWorker(RoleType roleType, Movie movie){
-        this.roleType = roleType;
+    public MovieWorker(Movie movie){
         this.movie = movie;
     }
 }
