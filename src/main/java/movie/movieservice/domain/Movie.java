@@ -2,8 +2,10 @@ package movie.movieservice.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -11,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Entity
-public class Movie {
+public class Movie extends BaseEntity{
 
     @Id
     @Column(name = "MOVIE_ID")
@@ -52,7 +54,7 @@ public class Movie {
             screen.setMovie(this);
         }
     }
-
+    
     public void createMovie(String id, Genre genre, String name, Date openingDate, Integer runningTime) {
         this.id = id;
         this.genre = genre;
@@ -61,7 +63,7 @@ public class Movie {
         this.runningTime = runningTime;
     }
 
-/*    @Override
+    @Override
     public String toString() {
         return "Movie{" +
                 "id='" + id + '\'' +
@@ -72,5 +74,5 @@ public class Movie {
                 ", movieWorkers=" + movieWorkers +
                 ", screens=" + screens +
                 '}';
-    }*/
+    }
 }

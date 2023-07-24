@@ -22,8 +22,6 @@ class ActorRepositoryTest {
     @Rollback(false)
     public void testActor() throws Exception {
         Actor actor = new Actor();
-        actor.setHeight(50);
-        actor.setInstagram("aa");
         //actor.setId(1L);
 
         Long id = actorRepository.save(actor);
