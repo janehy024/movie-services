@@ -25,9 +25,6 @@ public class MovieWorker {
     @JoinColumn(name="WORKER_ID")
     private Worker worker;
 
-    @Enumerated(EnumType.STRING)
-    private RoleType roleType;
-
     //연관 메서드
     public void setMovie(Movie movie){
         if(this.movie != null){
@@ -46,8 +43,7 @@ public class MovieWorker {
     }
 
     //생성 메서드
-    public MovieWorker(RoleType roleType, Movie movie){
-        this.roleType = roleType;
+    public MovieWorker(Movie movie){
         this.movie = movie;
     }
 }

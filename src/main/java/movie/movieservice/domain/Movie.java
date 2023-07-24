@@ -40,7 +40,6 @@ public class Movie extends BaseEntity{
 
 
 
-
     //연관 메서드
     public void addMovieWorker(MovieWorker movieWorker) {
         this.movieWorkers.add(movieWorker);
@@ -55,12 +54,25 @@ public class Movie extends BaseEntity{
             screen.setMovie(this);
         }
     }
-  
+    
     public void createMovie(String id, Genre genre, String name, Date openingDate, Integer runningTime) {
         this.id = id;
         this.genre = genre;
         this.name = name;
         this.openingDate = openingDate;
         this.runningTime = runningTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", openingDate=" + openingDate +
+                ", runningTime=" + runningTime +
+                ", genre=" + genre +
+                ", movieWorkers=" + movieWorkers +
+                ", screens=" + screens +
+                '}';
     }
 }
