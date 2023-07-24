@@ -1,4 +1,4 @@
-package vo;
+package movie.api.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
@@ -17,15 +17,27 @@ public class SearchMovieInfoVO {
         private String prdtStatNm;
         private String typeNm;
         private List<NationVO> nations;
-        private String genreNm;
+        private List<Genrevo> genres;
         private List<DirectorVO> directors;
         private List<ActorVO> actors;
         private List<ShowTypeVO> showTypes;
         private List<AuditVO> audits;
         private List<CompanyVO> companys;
         private List<StaffVO> staffs;
-        // getters and setters
+
+
 }
+
+/*@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
+class GenreVO {
+        private String genreNm;
+
+        public String getGenreNm() {
+                return genreNm;
+        }
+}*/
+
 
 
 @Data
