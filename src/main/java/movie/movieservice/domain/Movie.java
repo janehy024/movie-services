@@ -38,7 +38,6 @@ public class Movie {
 
 
 
-
     //연관 메서드
     public void addMovieWorker(MovieWorker movieWorker) {
         this.movieWorkers.add(movieWorker);
@@ -54,7 +53,7 @@ public class Movie {
         }
     }
 
-    public void Movie(String id, Genre genre, String name, Date openingDate, Integer runningTime) {
+    public void createMovie(String id, Genre genre, String name, Date openingDate, Integer runningTime) {
         this.id = id;
         this.genre = genre;
         this.name = name;
@@ -62,6 +61,16 @@ public class Movie {
         this.runningTime = runningTime;
     }
 
-    public Movie(String movieCd, Genre valueOf, String movieNm, Date date, int parseInt) {
-    }
+/*    @Override
+    public String toString() {
+        return "Movie{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", openingDate=" + openingDate +
+                ", runningTime=" + runningTime +
+                ", genre=" + genre +
+                ", movieWorkers=" + movieWorkers +
+                ", screens=" + screens +
+                '}';
+    }*/
 }
