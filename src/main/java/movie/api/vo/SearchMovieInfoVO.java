@@ -50,26 +50,6 @@ class NationVO {
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-class DirectorVO {
-        private String peopleNm;
-        private String peopleNmEn;
-        // getters and setters
-}
-
-
-@Data
-@JsonIgnoreProperties(ignoreUnknown = true)
-class ActorVO {
-        private String peopleNm;
-        private String peopleNmEn;
-        private String cast;
-        private String castEn;
-        // getters and setters
-}
-
-
-@Data
-@JsonIgnoreProperties(ignoreUnknown = true)
 class ShowTypeVO {
         private String showTypeGroupNm;
         private String showTypeNm;

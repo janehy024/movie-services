@@ -44,10 +44,10 @@ public class InitDb {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            movie1.createMovie("aa",openingDate, 100, Genre.HORROR);
+/*            movie1.createMovie("aa",openingDate, 100, Genre.HORROR);
             movie2.createMovie("bb",openingDate,130, Genre.ACTION);
             em.persist(movie1);
-            em.persist(movie2);
+            em.persist(movie2);*/
 
             //배우 추가
 

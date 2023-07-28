@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Entity
-public class Movie extends BaseEntity{
+public class Movie {
 
     @Id
     @Column(name = "MOVIE_ID")
@@ -37,7 +37,6 @@ public class Movie extends BaseEntity{
     @OneToMany(fetch= FetchType.LAZY)
     @JoinColumn(name = "MOVIE_ID")
     private List<Screen> screens = new ArrayList<>();
-
 
 
     //연관 메서드
