@@ -21,9 +21,10 @@ public class MovieWorker {
     @JoinColumn(name="MOVIE_ID")
     private Movie movie;
 
+
     @ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name="WORKER_ID")
-    private Worker worker;
+    private Worker workers;
 
     //연관 메서드
     public void setMovie(Movie movie){
@@ -34,11 +35,11 @@ public class MovieWorker {
         movie.getMovieWorkers().add(this);
     }
 
-    public void setWorker(Worker worker){
-        if(this.worker != null){
-            this.worker.getMovieWorkers().remove(this);
+    public void setWorkers(Worker worker){
+        if(this.workers != null){
+            this.workers.getMovieWorkers().remove(this);
         }
-        this.worker = worker;
+        this.workers = worker;
         worker.getMovieWorkers().add(this);
     }
 
