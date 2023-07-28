@@ -6,9 +6,12 @@ public enum Genre {
     HORROR("호러"),
     COMEDY("코미디"),
     SUSPENCE("서스펜스"),
-    CRIME("크라임"),
+    CRIME("범죄"),
     FICTION("픽션"),
     ANIMATED("애니메이션"),
+    DRAMA("드라마"),
+    PERFORMANCE("공연"),
+
     NONE("");
 
     private String genreName;
