@@ -3,22 +3,19 @@ package movie.movieservice.domain;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Getter
 @Entity
-
+@DiscriminatorValue("DIRECTORS")
 @NoArgsConstructor
 public class Director extends Worker{
 
-/*    @Id
+    @Id
     @GeneratedValue
     @Column(name = "WORKER_ID")
-    private Long id;*/
+    private Long id;
 
     private String birthPlace;
 
@@ -29,7 +26,9 @@ public class Director extends Worker{
         this.birthPlace = birthPlace;
     }*/
 
-    public void Director(String name) {
+    public Director(String name) {
         this.setName(name);
     }
+
+
 }
