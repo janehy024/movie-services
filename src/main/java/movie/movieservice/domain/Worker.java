@@ -37,12 +37,8 @@ public abstract class Worker {
     //생성 메서드
     public void addMovieWorker(MovieWorker movieWorker) {
         this.movieWorkers.add(movieWorker);
-        if (movieWorker.getWorker() != this) {
-            movieWorker.setWorker(this);
+        if (movieWorker.getWorkers() != this) {
+            movieWorker.setWorkers(this);
         }
     }
-
-
-
-
 }
