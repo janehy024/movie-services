@@ -59,7 +59,6 @@ public class ApiClient {
             else {
                 try {
                     JSONObject movieInfoResult = (JSONObject) jsonObject.get("movieInfoResult");
-//                    System.out.println("movieInfoResult = " + movieInfoResult);
                     JSONObject movieInfo = (JSONObject) movieInfoResult.get("movieInfo");
                     return mapper.readValue(movieInfo.toString(), valueType);
                 } catch (Exception e) {
