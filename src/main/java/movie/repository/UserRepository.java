@@ -1,9 +1,7 @@
-package movie.movieservice.repository;
+package movie.repository;
 
 import lombok.RequiredArgsConstructor;
-import movie.movieservice.domain.MovieWorker;
-import movie.movieservice.domain.User;
-import movie.movieservice.domain.Worker;
+import movie.domain.User;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

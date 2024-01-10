@@ -1,8 +1,8 @@
-package movie.movieservice.service;
+package movie.service;
 
-import movie.movieservice.domain.Movie;
-import movie.movieservice.domain.MovieWorker;
-import movie.movieservice.repository.MovieRepository;
+import movie.domain.Movie;
+import movie.domain.MovieWorker;
+import movie.repository.MovieRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

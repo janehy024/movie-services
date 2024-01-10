@@ -1,12 +1,9 @@
-package movie.movieservice.service;
+package movie.service;
 
-import movie.movieservice.domain.User;
-import movie.movieservice.repository.UserRepository;
+import movie.domain.User;
+import movie.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.TypedQuery;
-import java.time.LocalDateTime;
 
 @Service
 @Transactional(readOnly = true)

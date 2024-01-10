@@ -1,4 +1,4 @@
-package movie.movieservice.domain;
+package movie.domain;
 
 public enum Genre {
     ADVENTURE("어드벤처"),

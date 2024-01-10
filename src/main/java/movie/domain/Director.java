@@ -1,10 +1,9 @@
-package movie.movieservice.domain;
+package movie.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Getter
 @Entity

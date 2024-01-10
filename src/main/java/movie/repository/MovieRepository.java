@@ -1,6 +1,6 @@
-package movie.movieservice.repository;
+package movie.repository;
 
-import movie.movieservice.domain.Movie;
+import movie.domain.Movie;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -39,4 +39,8 @@ public class MovieRepository {
 
     }
 
+    public Movie findOne(Long movieId) {
+        String jpql = "SELECT m FROM movie m WHERE movie_id=" + movieId;
+        return em.createQuery(jpql, Movie.class).getSingleResult();
+    }
 }

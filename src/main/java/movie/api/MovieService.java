@@ -1,9 +1,9 @@
 package movie.api;
 
 import movie.api.vo.*;
-import movie.movieservice.domain.*;
-import movie.movieservice.repository.WorkerRepository;
-import movie.movieservice.repository.MovieRepository;
+import movie.domain.*;
+import movie.repository.WorkerRepository;
+import movie.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

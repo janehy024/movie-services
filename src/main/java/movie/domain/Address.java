@@ -1,4 +1,4 @@
-package movie.movieservice.domain;
+package movie.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
