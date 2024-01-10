@@ -73,4 +73,9 @@ public class MovieService {
             throw new Exception("검색 값이 없습니다.");
         }
     }
+
+    public void showMovieAndActors(int page) {
+        List<Movie> movies = movieRepository.findAll();
+        movies.stream().forEach(System.out::println);
+    }
 }

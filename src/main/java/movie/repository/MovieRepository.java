@@ -12,6 +12,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+
+import static com.querydsl.core.group.GroupBy.groupBy;
+import static com.querydsl.core.group.GroupBy.list;
 
 @Repository
 public class MovieRepository {
@@ -64,5 +68,20 @@ public class MovieRepository {
                 .fetch();
 
         return movies;
+    }
+
+    public List<Movie> findAll() {
+        JPAQueryFactory query = new JPAQueryFactory(em);
+        QMovie qMovie = QMovie.movie;
+        QMovieWorker qMovieWorker = QMovieWorker.movieWorker;
+
+        List<Movie> results = (List<Movie>) query.from(qMovie, qMovieWorker)
+                .leftJoin(qMovie.movieWorkers, qMovieWorker)
+                .where(qMovie.id.eq(qMovieWorker.movie.id), qMovieWorker.isNotNull())
+                .offset(0).limit(2)
+                .fetchResults()
+                .getResults();
+
+        return results;
     }
 }
