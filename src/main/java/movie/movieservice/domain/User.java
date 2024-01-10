@@ -45,4 +45,8 @@ public class User extends BaseEntity{
         this.address = address;
         this.setCreateTime(LocalDateTime.now());
     }
+
+    public void editUserName(String editName) {
+        this.name = editName;
+    }
 }
