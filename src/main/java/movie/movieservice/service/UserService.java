@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 @Service
 @Transactional(readOnly = true)
 public class UserService {
-
     private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
@@ -26,11 +25,11 @@ public class UserService {
 
     // User 정보 수정
     public void editUserName(Long userId, String editName){
-        result.setName(editName);
-        result.setEditTime(LocalDateTime.now());
+        userRepository.update(userId, editName);
     }
 
-
-
-
+    // User 삭제
+    public void deleteUser(Long userId) {
+        userRepository.delete(userId);
+    }
 }

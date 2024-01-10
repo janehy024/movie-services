@@ -31,4 +31,9 @@ public class UserRepository {
         result.setEditTime(LocalDateTime.now());
         result.editUserName(name);
     }
+
+    public void delete(Long userId) {
+        User user = em.find(User.class, userId);
+        em.remove(user);
+    }
 }
