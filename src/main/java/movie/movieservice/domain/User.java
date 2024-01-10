@@ -28,7 +28,6 @@ public class User extends BaseEntity{
     @OneToMany(fetch= FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "user")
     private List<Ticket> tickets = new ArrayList<Ticket>();
 
-
     //연관메서드
     public void addTicket(Ticket ticket) {
         this.tickets.add(ticket);
@@ -38,17 +37,12 @@ public class User extends BaseEntity{
     }
 
     //생성 메서드
-    public void createUser(String name, Integer age, String city, String street, String zipCode){
-
+    public User(String name, Integer age, String city, String street, String zipCode){
         this.name = name;
         this.age = age;
+
         Address address = new Address(city, street, zipCode);
         this.address = address;
         this.setCreateTime(LocalDateTime.now());
-    }
-
-    //수정 로직
-    public void editUser(String findName, String editName){
-
     }
 }
