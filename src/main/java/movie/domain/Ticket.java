@@ -55,4 +55,8 @@ public class Ticket {
 
         user.getTickets().add(this);
     }
+
+    public void changeState() {
+        this.state = false;
+    }
 }

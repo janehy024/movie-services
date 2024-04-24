@@ -25,8 +25,6 @@ public class Theater {
     @JoinColumn(name="THEATER_ID")
     private List<Screen> screens = new ArrayList<Screen>();
 
-
-
     @OneToMany(fetch= FetchType.LAZY)
     @JoinColumn(name = "THEATER_ID")
     private List<Seat> seats = new ArrayList<Seat>();

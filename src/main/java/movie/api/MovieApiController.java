@@ -4,12 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class MovieController {
-
-    private final MovieService movieService;
+public class MovieApiController {
 
     @Autowired
-    public MovieController(MovieService movieService) {
+    private final MovieApiService movieService;
+
+    @Autowired
+    public MovieApiController(MovieApiService movieService) {
         this.movieService = movieService;
     }
 }

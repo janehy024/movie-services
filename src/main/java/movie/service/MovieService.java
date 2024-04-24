@@ -22,7 +22,7 @@ public class MovieService {
         this.movieRepository = movieRepository;
     }
 
-    public void showMovieByMovieId(Long movieId) {
+    public void showMovieByMovieId(String movieId) {
         Movie movie = movieRepository.findOne(movieId);
         List<MovieWorker> movieWorkers = movie.getMovieWorkers();
 

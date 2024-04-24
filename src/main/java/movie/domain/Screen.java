@@ -46,7 +46,6 @@ public class Screen {
 
     //생성 메서드
     public Screen(LocalTime startTime, LocalTime endTime, Movie movie, Theater theater){
-
         this.movie = movie;
         this.theater = theater;
         this.startTime = startTime;

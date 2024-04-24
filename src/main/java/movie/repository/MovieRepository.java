@@ -10,12 +10,11 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import static com.querydsl.core.group.GroupBy.groupBy;
 import static com.querydsl.core.group.GroupBy.list;
+
 
 @Repository
 public class MovieRepository {
@@ -28,7 +27,6 @@ public class MovieRepository {
     }
 
     public String save(Movie movie){
-
         em.persist(movie);
         return movie.getId();
     }
@@ -47,7 +45,7 @@ public class MovieRepository {
         }
     }
 
-    public Movie findOne(Long movieId) {
+    public Movie findOne(String movieId) {
         String jpql = "SELECT m FROM movie m WHERE movie_id=" + movieId;
         return em.createQuery(jpql, Movie.class).getSingleResult();
     }

@@ -20,7 +20,6 @@ public class Seat {
 
     private Integer seatRow;
     private Integer seatColum;
-
     private Boolean state;
 
     @ManyToOne(fetch= FetchType.LAZY)

@@ -16,7 +16,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class MovieService {
+public class MovieApiService {
 
     private final MovieRepository movieRepository;
     private final WorkerRepository workerRepository;
@@ -26,7 +26,7 @@ public class MovieService {
     private String apiKey;
 
     @Autowired
-    public MovieService(MovieRepository movieRepository, WorkerRepository workerRepository, ApiClient apiClient) {
+    public MovieApiService(MovieRepository movieRepository, WorkerRepository workerRepository, ApiClient apiClient) {
         this.movieRepository = movieRepository;
         this.workerRepository = workerRepository;
         this.apiClient = apiClient;

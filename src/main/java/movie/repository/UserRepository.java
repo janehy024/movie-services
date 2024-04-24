@@ -22,6 +22,10 @@ public class UserRepository {
         return user.getId();
     }
 
+    public User findOne(Long userId) {
+        return em.find(User.class, userId);
+    }
+
     public void update(Long userId, String name) {
         TypedQuery<User> query = em.createQuery("select u from User u where n.user_id=:userId", User.class);
         query.setParameter("userId", userId);
