@@ -29,8 +29,18 @@ dependencies {
 	implementation files('libs/kobis-opcl-rest-v1.0.jar')
 	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
 
+	//Querydsl
+	implementation 'com.querydsl:querydsl-jpa'
+	annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jpa"
+	annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+	annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+clean {
+	delete file('src/main/generated')
 }
